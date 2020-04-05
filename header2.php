@@ -49,7 +49,7 @@
           </div>
           <div class="col-md-auto">
 
-            <span class="mr-3"><i class="icofont-ui-touch-phone"></i>+1 (551) 900-1661</span>
+            
 
             <span class="mr-3">support<i class="icofont-ui-email"></i>speedingtonexpress.com</span>
             <!-- Topbar Language Dropdown Start -->

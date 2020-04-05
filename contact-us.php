@@ -103,9 +103,6 @@ EOT;
               <div class="d-flex align-items-start items">
                 <i class="icofont-google-map"></i> <span>254 Street Avenue, LA US</span>
               </div>
-              <div class="d-flex align-items-start items">
-                <i class="icofont-phone"></i> <span> +1 (551) 900-1661</span>
-              </div>
               <div class="text-nowrap d-flex align-items-start items">
                 <i class="icofont-email"></i> <a href="#">support@speedingtonexpress.com</a>
               </div>
@@ -116,9 +113,6 @@ EOT;
               <h4>Spain</h4>
               <div class="d-flex align-items-start items">
                 <i class="icofont-google-map"></i> <span>254 Street Avenue, LA US</span>
-              </div>
-              <div class="d-flex align-items-start items">
-                <i class="icofont-phone"></i> <span> +1 (551) 900-1661</span>
               </div>
               <div class="text-nowrap d-flex align-items-start items">
                 <i class="icofont-email"></i> <a href="#">support@speedingtonexpress.com</a>

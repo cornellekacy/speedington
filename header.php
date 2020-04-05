@@ -60,10 +60,7 @@
                 <small class="txt-black">Emaii Us</small>
                 <a href="#">support@speedingtonexpress.com</a>
             </div>
-            <div class="top-text">
-                <small class="txt-black">Phone Number</small>
-                +1 (551) 900-1661
-            </div>        
+                 
           </div>
           <div class="col-md-auto">
 
