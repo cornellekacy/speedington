@@ -51,7 +51,7 @@
 
             <span class="mr-3"><i class="icofont-ui-touch-phone"></i>+1 (551) 900-1661</span>
 
-            <span class="mr-3">support<i class="icofont-ui-email"></i> speedingtonexpress.com</span>
+            <span class="mr-3">support<i class="icofont-ui-email"></i>speedingtonexpress.com</span>
             <!-- Topbar Language Dropdown Start -->
             <div class="dropdown d-inline-flex lang-toggle shadow-sm">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown" data-animations="slideInUp slideInUp slideInUp slideInUp">

@@ -65,10 +65,26 @@ if(isset($_POST['save'])){
  $d5 = mysqli_real_escape_string($link,$_POST['d5']);
     $dc5 = mysqli_real_escape_string($link,$_POST['dc5']);
 
+     $l6 = mysqli_real_escape_string($link,$_POST['l6']);
+ $d6 = mysqli_real_escape_string($link,$_POST['d6']);
+  $dc6 = mysqli_real_escape_string($link,$_POST['dc6']);
+ $l7 = mysqli_real_escape_string($link,$_POST['l7']);
+ $d7 = mysqli_real_escape_string($link,$_POST['d7']);
+   $dc7 = mysqli_real_escape_string($link,$_POST['dc7']);
+ $l8 = mysqli_real_escape_string($link,$_POST['l8']);
+ $d8 = mysqli_real_escape_string($link,$_POST['d8']);
+    $dc8 = mysqli_real_escape_string($link,$_POST['dc8']);
+ $l9 = mysqli_real_escape_string($link,$_POST['l9']);
+ $d9 = mysqli_real_escape_string($link,$_POST['d9']);
+    $dc9 = mysqli_real_escape_string($link,$_POST['dc9']);
+ $l10 = mysqli_real_escape_string($link,$_POST['l10']);
+ $d10 = mysqli_real_escape_string($link,$_POST['d10']);
+    $dc10 = mysqli_real_escape_string($link,$_POST['dc10']);
+
 
 
 // Attempt insert query execution
-        $sql =  "UPDATE track SET l1='$l1',d1='$d1',dc1='$dc1',l2='$l2',d2='$d2',dc2='$dc2',l3='$l3',d3='$d3',dc3='$dc3', l4='$l4', d4='$d4',dc4='$dc4', l5='$l5', d5='$d5',dc5='$dc5'    WHERE track_id={$id} ";
+        $sql =  "UPDATE track SET l1='$l1',d1='$d1',dc1='$dc1',l2='$l2',d2='$d2',dc2='$dc2',l3='$l3',d3='$d3',dc3='$dc3', l4='$l4', d4='$d4',dc4='$dc4', l5='$l5', d5='$d5',dc5='$dc5',l6='$l6', d6='$d6',dc6='$dc6',l7='$l7', d7='$d7',dc7='$dc7',l8='$l8', d8='$d8',dc8='$dc8',l9='$l9', d9='$d9',dc9='$dc9',l10='$l10', d10='$d10',dc10='$dc10'    WHERE track_id={$id} ";
     if(mysqli_query($link, $sql)){
         echo "<div class='alert alert-success'>
         <strong>Success!</strong> Tracking Successfully Update.
@@ -200,7 +216,112 @@ mysqli_close($link);
                                 </div>
                                      </div>
                                 </div>
-                          
+                                <hr>
+                             <div class="row">
+                                    <div class="col-md-4">
+                                            <div class="form-group">
+                                    <label><b>sixth Location</b></label>
+                                    <input type="text" name="l6" value="<?php echo $data["l6"];?>" class="form-control" placeholder="" required="">
+                                </div>
+                                    </div>
+                                     <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Date</b></label>
+                                    <input type="date" value="<?php echo $data["d6"];?>" name="d6" class="form-control" placeholder="" >
+                                </div>
+                                     </div>
+                                        <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Description</b></label>
+                                   <textarea class="form-control" rows="4" name="dc6" id="comment"><?php echo $data["dc6"];?></textarea>
+                                    
+                                </div>
+                                     </div>
+                                </div>
+                                   <div class="row">
+                                    <div class="col-md-4">
+                                            <div class="form-group">
+                                    <label><b>Seventh Location</b></label>
+                                    <input type="text" name="l7" value="<?php echo $data["l7"];?>" class="form-control" placeholder="" >
+                                </div>
+                                    </div>
+                                     <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Date</b></label>
+                                    <input type="date" name="d7" value="<?php echo $data["d7"];?>" class="form-control" placeholder="">
+                                </div>
+                                     </div>
+                                             <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Description</b></label>
+                                   <textarea class="form-control" rows="5" name="dc7" id="comment"><?php echo $data["dc7"];?></textarea>
+                                    
+                                </div>
+                                     </div>
+                                </div>
+                                   <div class="row">
+                                    <div class="col-md-4">
+                                            <div class="form-group">
+                                    <label><b>Eigth Location</b></label>
+                                    <input type="text" name="l8" value="<?php echo $data["l8"];?>" class="form-control" placeholder="" >
+                                </div>
+                                    </div>
+                                     <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Date</b></label>
+                                    <input type="date" name="d8" value="<?php echo $data["d8"];?>" class="form-control" placeholder="" >
+                                </div>
+                                     </div>
+                                             <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Description</b></label>
+                                   <textarea class="form-control" rows="5" name="dc9" id="comment"><?php echo $data["dc9"];?></textarea>
+                                    
+                                </div>
+                                     </div>
+                                </div>
+                                   <div class="row">
+                                    <div class="col-md-4">
+                                            <div class="form-group">
+                                    <label><b>ninth Location</b></label>
+                                    <input type="text" name="l9" value="<?php echo $data["l9"];?>" class="form-control" placeholder="" >
+                                </div>
+                                    </div>
+                                     <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Date</b></label>
+                                    <input type="date" name="d9" value="<?php echo $data["d9"];?>" class="form-control" placeholder="" >
+                                </div>
+                                     </div>
+                                             <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Description</b></label>
+                                   <textarea class="form-control" rows="9" name="dc9" id="comment"><?php echo $data["dc9"];?></textarea>
+                                    
+                                </div>
+                                     </div>
+                                </div>
+                                   <div class="row">
+                                    <div class="col-md-4">
+                                            <div class="form-group">
+                                    <label><b>Tenth Location</b></label>
+                                    <input type="text" name="l10" value="<?php echo $data["l10"];?>" class="form-control" placeholder="" >
+                                </div>
+                                    </div>
+                                     <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Date</b></label>
+                                    <input type="date" name="d10" value="<?php echo $data["d10"];?>" class="form-control" placeholder="">
+                                </div>
+                                     </div>
+                                             <div class="col-md-4">
+                                             <div class="form-group">
+                                    <label><b>Description</b></label>
+                                   <textarea class="form-control" rows="4" name="dc10" id="comment"><?php echo $data["dc10"];?></textarea>
+                                    
+                                </div>
+                                     </div>
+                                </div>
                             
                               
                                 <button type="submit" name="save" class="btn btn-primary">Add Location</button>

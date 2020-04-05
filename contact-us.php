@@ -18,6 +18,74 @@
     </div>
   </div>
   <!-- Page Breadcrumbs End -->
+                                              <?php
+/**
+ * This example shows how to handle a simple contact form.
+ */
+
+//Import PHPMailer classes into the global namespace
+use PHPMailer\PHPMailer\PHPMailer;
+$msg = '';
+//Don't run this unless we're handling a form submission
+if (array_key_exists('email', $_POST)) {
+    date_default_timezone_set('Etc/UTC');
+    require 'autoload.php';
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer;
+       $mail->SMTPOptions = array(
+        'ssl' => array(
+            'verify_peer' => false,
+            'verify_peer_name' => false,
+            'allow_self_signed' => true
+        )
+    );
+    //Tell PHPMailer to use SMTP - requires a local mail server
+    //Faster and safer than using mail()
+    $mail->isSMTP();
+    $mail->SMTPDebug = SMTP::DEBUG_SERVER; 
+$mail->SMTPSecure = 'tls';
+$mail->Host = 'smtp.yandex.com';
+$mail->Port = 587;
+//Whether to use SMTP authentication
+$mail->SMTPAuth = true;
+//Username to use for SMTP authentication - use full email address for gmail
+$mail->Username = "contact@worldcounterfeit.com";
+//Password to use for SMTP authentication
+$mail->Password = "Taselouis";
+    //Use a fixed address in your own domain as the from address
+    //**DO NOT** use the submitter's address here as it will be forgery
+    //and will cause your messages to fail SPF checks
+    $mail->setFrom('contact@worldcounterfeit.com', 'Site Contact');
+    //Send the message to yourself, or whoever should receive contact for submissions
+    $mail->addAddress('contact@royallogistics.world', 'Contact');
+    //Put the submitter's address in a reply-to header
+    //This will fail if the address provided is invalid,
+    //in which case we should ignore the whole request
+    if ($mail->addReplyTo($_POST['email'], $_POST['name'])) {
+        $mail->Subject = 'Speedington Express Contact';
+        //Keep it simple - don't use HTML
+        $mail->isHTML(false);
+        //Build a simple message body
+        $mail->Body = <<<EOT
+Name: {$_POST['name']}
+Email: {$_POST['email']}
+Phone Number: {$_POST['phone']}
+Subject: {$_POST['subject']}
+Message: {$_POST['message']}
+EOT;
+        //Send the message, check for errors
+        if (!$mail->send()) {
+            //The reason for failing to send will be in $mail->ErrorInfo
+            //but you shouldn't display errors to users - process the error, log it on your server.
+            $msg = 'Sorry, something went wrong. Please try again later.'. $mail->ErrorInfo;
+        } else {
+    echo "<script>alert('Message Successfully Send, you will receive a reply from us shortly')</script>";
+        }
+    } else {
+        $msg = 'Invalid email address, message ignored.';
+    }
+}
+?> 
 
   <!-- Main Body Content Start -->
   <main id="body-content">
@@ -74,7 +142,7 @@
                 </h1>
                 <!-- Heading Main -->
                 
-                <form action="http://mannatstudio.com/html/logzee/new_color/contact_process.php" method="post" id="contactusForm" novalidate="novalidate" class="col rounded-field">
+                <form action="" method="post" id="contactusForm" novalidate="novalidate" class="col rounded-field">
                     <div class="form-row mb-4">
                       <div class="col">
                         <input type="text" name="name" id="name" class="form-control" placeholder="Your Name">
@@ -83,34 +151,24 @@
                         <input type="text" name="email" id="email" class="form-control" placeholder="Email">
                       </div>
                     </div>
+
                     <div class="form-row mb-4">
                       <div class="col">
-                        <select title="Please choose a package" required=""  name="Transport_Package" id ="Transport_Package" class="custom-select" aria-required="true" aria-invalid="false">
-                            <option value="">Transport Type</option>
-                            <option value="Type 1">Type 1</option>
-                            <option value="Type 2">Type 2</option>
-                            <option value="Type 3">Type 3</option>
-                            <option value="Type 4">Type 4</option>
-                        </select>
+                        <input type="text" name="subject"  class="form-control" placeholder="subject">
                       </div>
                       <div class="col">
-                        <select title="Please choose a package" required="" name="Freight_Package" id="Freight_Package" class="custom-select" aria-required="true" aria-invalid="false">
-                            <option value="">Type of freight</option>
-                            <option value="Type 1">Type 1</option>
-                            <option value="Type 2">Type 2</option>
-                            <option value="Type 3">Type 3</option>
-                            <option value="Type 4">Type 4</option>
-                        </select>
+                        <input type="text" name="phone"  class="form-control" placeholder="Phone Number">
                       </div>
                     </div>
+              
                     <div class="form-row mb-4">
                       <div class="col">
-                        <textarea rows="7" name="cment" id="cment" placeholder="Message" class="form-control"></textarea>
+                        <textarea rows="7" name="message" id="cment" placeholder="Message" class="form-control"></textarea>
                       </div>
                     </div>
                     <div class="form-row text-center">
 
-                        <button name="contactForm" id="contactForm" type="submit" class="form-btn mx-auto btn-theme bg-orange">Submit Now <i class="icofont-rounded-right"></i></button>
+                        <button id="contactForm" type="submit" class="form-btn mx-auto btn-theme bg-orange">Submit Now <i class="icofont-rounded-right"></i></button>
                     </div>
                 </form>         
               </div>

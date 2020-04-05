@@ -71,6 +71,22 @@ CREATE TABLE IF NOT EXISTS `track`.`track` (
   `d5` varchar(255) NOT NULL,
   `dc5` varchar(255) NOT NULL,
 
+    `l6` varchar(255) NOT NULL,
+  `d6` varchar(255) NOT NULL,
+  `dc6` varchar(255) NOT NULL,
+  `l7` varchar(255) NOT NULL,
+  `d7` varchar(255) NOT NULL,
+  `dc7` varchar(255) NOT NULL,
+  `l8` varchar(255) NOT NULL,
+  `d8` varchar(255) NOT NULL,
+  `dc8` varchar(255) NOT NULL,
+  `l9` varchar(255) NOT NULL,
+  `d9` varchar(255) NOT NULL,
+  `dc9` varchar(255) NOT NULL,
+  `l10` varchar(255) NOT NULL,
+  `d10` varchar(255) NOT NULL,
+  `dc10` varchar(255) NOT NULL,
+
   PRIMARY KEY (`track_id`))
 ENGINE = InnoDB;
 
